@@ -12,13 +12,17 @@ makeCacheMatrix <- function(x = matrix()) {
     inv <<- NULL
   }
   get <- function() x
-  set.inv <- function(invers) inv <<- invers
-  get.inv <- function() inv
-  list(set = set, get = get, setinv = setinv, getinv = getinv)
+  setinv <- function(invers) inv <<- invers
+  getinv <- function() inv
+  list(set = set, 
+       get = get, 
+       setinv = setinv, 
+       getinv = getinv)
 }
 
 
 ## Write a short comment describing this function
+
 ## Inversion of matrix returned by makeCacheMatrix function (see above). 
 
 cacheSolve <- function(x, ...) {
